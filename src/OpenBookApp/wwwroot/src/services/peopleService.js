@@ -7,23 +7,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     }
 };
 define(["require", "exports", 'angular2/angular2'], function (require, exports, angular2_1) {
-    var AppComponent = (function () {
-        function AppComponent() {
-            this.name = "John Doe";
+    var PeopleService = (function () {
+        function PeopleService(http) {
+            this.people = http.get('api/people.json').map(function (res) { return res.json(); });
         }
-        AppComponent.prototype.hello = function () {
-            alert("hello, " + this.name);
-        };
-        AppComponent = __decorate([
-            angular2_1.Component({
-                selector: 'my-app'
-            }),
-            angular2_1.View({
-                directives: [angular2_1.formDirectives],
-                templateUrl: 'mainForm.html'
-            })
-        ], AppComponent);
-        return AppComponent;
+        PeopleService = __decorate([
+            angular2_1.Injectable()
+        ], PeopleService);
+        return PeopleService;
     })();
-    angular2_1.bootstrap(AppComponent);
+    exports.PeopleService = PeopleService;
 });
