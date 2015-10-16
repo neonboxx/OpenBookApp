@@ -1,7 +1,7 @@
 ﻿<div>
     <h2>Snippets</h2>
-    <snippet *ng-for="#snippet of snippets"
-               [content]="person.content"
-               [id]="snippet.id">
-    </snippet>
+    <snippet-vm *ng-for="#snippet of snippets"
+               [content]="snippet.Content"
+               [id]="snippet.Id">
+    </snippet-vm>
 </div>

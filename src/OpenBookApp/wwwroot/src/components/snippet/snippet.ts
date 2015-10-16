@@ -1,22 +1,17 @@
 //a simple person component
 import {Component, View, EventEmitter} from 'angular2/angular2'
-import {Snippet} from './models/snippet'
 @Component({
-    selector: 'snippet',
+    selector: 'snippet-vm',
     inputs: ['id', 'content'],
     //outputs: ['hello']
 })
 @View({
-    template: `
-    <div>
-      <span>{{id}}</span>
+    template: `<div>
+      <span style="display:none;">{{id}}</span>
       <span>{{content}}</span>
-    </div>
-  `
+    </div>`
 })
-export class SnippetVm extends Snippet{
-
-
-
-
+export class SnippetVm{
+    id: string;
+    content: string;
 }

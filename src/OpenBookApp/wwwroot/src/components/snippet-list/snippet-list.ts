@@ -1,20 +1,20 @@
 ﻿//our root app component
-import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2'
+import {Component, View, CORE_DIRECTIVES, QueryList} from 'angular2/angular2'
 import {SnippetService} from '../../services/snippetservice'
-import {Snippet} from '../../models/snippet'
+import {SnippetVm} from '../../components/snippet/snippet'
 
 @Component({
     selector: 'snippet-list',
     bindings: [SnippetService]
 })
 @View({
-    template: './snippet-list.html',
-    directives: [CORE_DIRECTIVES, Snippet]
+    templateUrl: 'src/components/snippet-list/snippet-list.html',
+    directives: [CORE_DIRECTIVES, SnippetVm]
 })
 export class SnippetList {
-    snippets;
-    constructor(public peopleService: SnippetService) {
-        peopleService.snippets
+    snippets: Array<SnippetVm>;
+    constructor(public snippetService: SnippetService) {
+        snippetService.snippets
             .subscribe(snippets => this.snippets = snippets);
     }
 }

@@ -6,12 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-define(["require", "exports", 'angular2/angular2', '../../services/snippetservice', '../../models/snippet'], function (require, exports, angular2_1, snippetservice_1, snippet_1) {
+define(["require", "exports", 'angular2/angular2', '../../services/snippetservice', '../../components/snippet/snippet'], function (require, exports, angular2_1, snippetservice_1, snippet_1) {
     var SnippetList = (function () {
-        function SnippetList(peopleService) {
+        function SnippetList(snippetService) {
             var _this = this;
-            this.peopleService = peopleService;
-            peopleService.snippets
+            this.snippetService = snippetService;
+            snippetService.snippets
                 .subscribe(function (snippets) { return _this.snippets = snippets; });
         }
         SnippetList = __decorate([
@@ -20,8 +20,8 @@ define(["require", "exports", 'angular2/angular2', '../../services/snippetservic
                 bindings: [snippetservice_1.SnippetService]
             }),
             angular2_1.View({
-                template: './snippet-list.html',
-                directives: [angular2_1.CORE_DIRECTIVES, snippet_1.Snippet]
+                templateUrl: 'src/components/snippet-list/snippet-list.html',
+                directives: [angular2_1.CORE_DIRECTIVES, snippet_1.SnippetVm]
             })
         ], SnippetList);
         return SnippetList;
