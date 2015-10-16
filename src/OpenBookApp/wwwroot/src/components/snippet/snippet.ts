@@ -6,10 +6,9 @@ import {Component, View, EventEmitter} from 'angular2/angular2'
     //outputs: ['hello']
 })
 @View({
-    template: `<div>
-      <span style="display:none;">{{id}}</span>
-      <span>{{content}}</span>
-    </div>`
+        template: `<div class="oaerror info">
+                <strong>{{$index}}</strong>{{content}}
+            </div>`
 })
 export class SnippetVm{
     id: string;

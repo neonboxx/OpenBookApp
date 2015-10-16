@@ -16,7 +16,7 @@ define(["require", "exports", 'angular2/angular2'], function (require, exports, 
                 inputs: ['id', 'content'],
             }),
             angular2_1.View({
-                template: "<div>\n      <span style=\"display:none;\">{{id}}</span>\n      <span>{{content}}</span>\n    </div>"
+                template: "<div class=\"oaerror info\">\n                <strong>{{$index}}</strong>{{content}}\n            </div>"
             })
         ], SnippetVm);
         return SnippetVm;

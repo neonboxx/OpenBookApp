@@ -1,7 +1,11 @@
-﻿<div>
-    <h2>Snippets</h2>
-    <snippet-vm *ng-for="#snippet of snippets"
-               [content]="snippet.Content"
-               [id]="snippet.Id">
-    </snippet-vm>
+﻿<div class="container">
+    <div class="row">
+        <br><br>
+        <div class="error-notice">
+            <snippet-vm *ng-for="#snippet of snippets"
+                        [content]="snippet.Content"
+                        [id]="snippet.Id">
+            </snippet-vm>
+        </div>
+    </div>
 </div>
